@@ -61,9 +61,16 @@ league_start_date = "2025-09-07"        # Start date of your league, used to fil
 email = os.getenv("Email_USER")         # Email to send recommendations to, can be the same as EMAIL_USER or different
 # ---------------------------------------------------
 
-# Load environment variables and login to kickbase
-USERNAME = os.getenv("malte.krohn@krohns.de") # DO NOT CHANGE THIS, YOU MUST SET THOSE IN GITHUB SECRETS OR A .env FILE
-PASSWORD = os.getenv("zohwux-nykpa4-gonBag") # DO NOT CHANGE THIS, YOU MUST SET THOSE IN GITHUB SECRETS OR A .env FILE
+# Load environment variables and login to Kickbase
+USERNAME = os.getenv("KICKBASE_USERNAME")
+PASSWORD = os.getenv("KICKBASE_PASSWORD")
+
+if not USERNAME:
+    raise RuntimeError("KICKBASE_USERNAME is not set.")
+
+if not PASSWORD:
+    raise RuntimeError("KICKBASE_PASSWORD is not set.")
+
 token = login(USERNAME, PASSWORD)
 print("\nLogged in to Kickbase.")
 
