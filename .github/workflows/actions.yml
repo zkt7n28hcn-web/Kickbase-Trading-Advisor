@@ -1,5 +1,10 @@
-name: Run Daily Predictions
-
+name: Run daily predictions
+  env:
+    KICKBASE_USERNAME: ${{ secrets.KICKBASE_USERNAME }}
+    KICKBASE_PASSWORD: ${{ secrets.KICKBASE_PASSWORD }}
+    EMAIL_USER: ${{ secrets.EMAIL_USER }}
+  run: python daily_predictions.py
+  
 on:
   schedule:
     - cron: '30 21 * * *'  # Runs every day at 22:30 UTC
