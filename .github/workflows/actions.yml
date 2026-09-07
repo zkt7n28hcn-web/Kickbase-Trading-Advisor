@@ -1,5 +1,4 @@
-name: Run daily predictions
-  env:
+name: Run daily predictions  env:
     KICKBASE_USERNAME: ${{ secrets.KICKBASE_USERNAME }}
     KICKBASE_PASSWORD: ${{ secrets.KICKBASE_PASSWORD }}
     EMAIL_USER: ${{ secrets.EMAIL_USER }}
